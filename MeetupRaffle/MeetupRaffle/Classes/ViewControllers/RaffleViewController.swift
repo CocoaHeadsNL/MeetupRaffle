@@ -32,7 +32,7 @@ final class RaffleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Reveal license raffle"
+        title = "AppDevcon ticket raffle"
         
         view.backgroundColor = AppSettings.Colors.primaryBackground
         membersStatusLabel.textColor = AppSettings.Colors.primaryText
@@ -82,7 +82,7 @@ final class RaffleViewController: UIViewController {
     
     private func getEventMembers(){
         raffleDisposable?.dispose()
-        provider.request(token: MeetupAPI.rsvps(groupName: AppSettings.Meetup.group, eventId: AppSettings.Meetup.eventId))
+        provider.request(MeetupAPI.rsvps(groupName: AppSettings.Meetup.group, eventId: AppSettings.Meetup.eventId))
             .on(started: { [weak self] () in
                 self?.showRevealAppIcon()
                 self?.winningMember.value = nil
@@ -91,7 +91,7 @@ final class RaffleViewController: UIViewController {
             .delay(1.0, on: QueueScheduler()) // A small delay to show the loading state for ALDataRequestView
             .filterSuccessfulStatusCodes() // Make sure only successful statuscodes pass
             .map(to: RSVPMemberList.self) // Map to the ALJSONAble object
-            .attachToDataRequestView(dataRequestView: dataRequestView) // Attach it to our ALDataRequestView to show all states
+            .attachTo(dataRequestView: dataRequestView) // Attach it to our ALDataRequestView to show all states
             .onNext({ [weak self] (membersList) in
                 self?.membersList.value = membersList
             })
@@ -106,7 +106,7 @@ final class RaffleViewController: UIViewController {
         raffleDisposable?.dispose()
         raffleDisposable = membersList.producer
             .skipNil()
-            .onStarted { [weak self] in
+            .onStarting { [weak self] in
                 self?.showRevealAppIcon()
                 self?.raffleIsRunning.value = true // This will disable the raffle button
             }
@@ -115,24 +115,24 @@ final class RaffleViewController: UIViewController {
                 self?.winningMember.value = membersList.giveMeARandomAttendingMember()
                 self?.raffleIsRunning.value = false // This will enable the raffle button again
             }
-            .attachToDataRequestView(dataRequestView: dataRequestView)
+            .attachTo(dataRequestView: dataRequestView) // Attach it to our ALDataRequestView to show all states
             .start()
     }
 }
 
 extension RaffleViewController : ALDataRequestViewDataSource {
-    func loadingViewForDataRequestView(dataRequestView: ALDataRequestView) -> UIView? {
+    func loadingView(for dataRequestView: ALDataRequestView) -> UIView? {
         let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
         activityIndicatorView.startAnimating()
         return activityIndicatorView
     }
     
-    func reloadViewControllerForDataRequestView(dataRequestView: ALDataRequestView) -> ALDataReloadType? {
+    func reloadViewController(for dataRequestView: ALDataRequestView) -> ALDataReloadType? {
         guard let reloadVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReloadViewController") as? ALDataReloadType else { return nil }
         return reloadVC
     }
     
-    func emptyViewForDataRequestView(dataRequestView: ALDataRequestView) -> UIView? {
+    func emptyView(for dataRequestView: ALDataRequestView) -> UIView? {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EmptyViewController").view
     }
 }

@@ -9,13 +9,18 @@
 import Foundation
 import Moya
 
-let provider = ReactiveCocoaMoyaProvider<MeetupAPI>()
+let provider = ReactiveSwiftMoyaProvider<MeetupAPI>()
 
 enum MeetupAPI {
     case rsvps(groupName:String, eventId:Int)
 }
 
 extension MeetupAPI: TargetType {
+    /// The method used for parameter encoding.
+    public var parameterEncoding: ParameterEncoding {
+        return URLEncoding()
+    }
+
     var baseURL: URL { return URL(string: "https://api.meetup.com")! }
     var path: String {
         switch self {

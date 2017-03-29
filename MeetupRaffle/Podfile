@@ -11,12 +11,13 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MeetupRaffle' do
-    pod 'ALDataRequestView/ReactiveCocoa', :git => 'https://github.com/AvdLee/ALDataRequestView'
+    pod 'ALDataRequestView/ReactiveCocoa'
     pod 'Moya/ReactiveCocoa'
     pod 'Moya-JASONMapper'
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod 'Moya-JASONMapper/ReactiveCocoa'
+    pod 'ReactiveCocoa'
+    pod 'Moya-JASONMapper/ReactiveSwift', '2.2.0'
     pod 'ALReactiveCocoaExtension'
     pod 'ReactiveSwift'
     pod 'Nuke'
@@ -24,10 +25,10 @@ end
 
 
 # Build configurations
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
-        end
-    end
-end
+#post_install do |installer|
+#    installer.pods_project.targets.each do |target|
+#        target.build_configurations.each do |config|
+#            config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+#        end
+#    end
+#end

@@ -10,8 +10,8 @@ import UIKit
 import ALDataRequestView
 
 final class ReloadViewController: UIViewController, ALDataReloadType {
+    @IBOutlet public var retryButton: UIButton?
 
-    @IBOutlet var retryButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

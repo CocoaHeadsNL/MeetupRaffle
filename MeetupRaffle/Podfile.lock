@@ -1,77 +1,74 @@
 PODS:
-  - Alamofire (4.0.1)
-  - ALDataRequestView/Core (2.0.0):
+  - Alamofire (4.4.0)
+  - ALDataRequestView/Core (2.3.0):
     - PureLayout
     - ReachabilitySwift (~> 3)
-  - ALDataRequestView/ReactiveCocoa (2.0.0):
+  - ALDataRequestView/ReactiveCocoa (2.3.0):
     - ALDataRequestView/Core
-    - ReactiveSwift (= 1.0.0-alpha.3)
-  - ALReactiveCocoaExtension (4.0.1):
-    - Moya (= 8.0.0-beta.3)
-    - ReactiveSwift (= 1.0.0-alpha.3)
-  - JASON (3.0)
-  - Moya (8.0.0-beta.3):
-    - Moya/Core (= 8.0.0-beta.3)
-  - Moya-JASONMapper (2.0.0):
-    - Moya-JASONMapper/Core (= 2.0.0)
-  - Moya-JASONMapper/Core (2.0.0):
-    - JASON
-    - Moya (= 8.0.0-beta.3)
-  - Moya-JASONMapper/ReactiveCocoa (2.0.0):
-    - Moya-JASONMapper/Core
-    - Moya/ReactiveCocoa
-    - ReactiveSwift (= 1.0.0-alpha.3)
-  - Moya/Core (8.0.0-beta.3):
-    - Alamofire (~> 4.0.0)
-    - Result
-  - Moya/ReactiveCocoa (8.0.0-beta.3):
-    - Moya/Core
     - ReactiveSwift
-  - Nuke (4.1.2)
+  - ALReactiveCocoaExtension (4.1.1):
+    - Moya (~> 8.0.0)
+    - ReactiveSwift
+  - JASON (3.1)
+  - Moya (8.0.3):
+    - Moya/Core (= 8.0.3)
+  - Moya-JASONMapper (2.2.0):
+    - Moya-JASONMapper/Core (= 2.2.0)
+  - Moya-JASONMapper/Core (2.2.0):
+    - JASON
+    - Moya (~> 8.0.0)
+  - Moya-JASONMapper/ReactiveSwift (2.2.0):
+    - Moya-JASONMapper/Core
+    - Moya/ReactiveSwift
+    - ReactiveSwift
+  - Moya/Core (8.0.3):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/ReactiveCocoa (8.0.3):
+    - Moya/ReactiveSwift
+  - Moya/ReactiveSwift (8.0.3):
+    - Moya/Core
+    - ReactiveSwift (~> 1.0)
+  - Nuke (5.1)
   - PureLayout (3.0.2)
   - ReachabilitySwift (3)
-  - ReactiveSwift (1.0.0-alpha.3):
-    - Result (~> 3.0)
-  - Result (3.0.0)
-  - RxCocoa (3.0.1):
-    - RxSwift (~> 3.0)
-  - RxSwift (3.0.1)
+  - ReactiveCocoa (5.0.1):
+    - ReactiveSwift (~> 1.1)
+  - ReactiveSwift (1.1.0):
+    - Result (~> 3.1)
+  - Result (3.2.1)
+  - RxCocoa (3.3.1):
+    - RxSwift (~> 3.3)
+  - RxSwift (3.3.1)
 
 DEPENDENCIES:
-  - ALDataRequestView/ReactiveCocoa (from `https://github.com/AvdLee/ALDataRequestView`)
+  - ALDataRequestView/ReactiveCocoa
   - ALReactiveCocoaExtension
   - Moya-JASONMapper
-  - Moya-JASONMapper/ReactiveCocoa
+  - Moya-JASONMapper/ReactiveSwift (= 2.2.0)
   - Moya/ReactiveCocoa
   - Nuke
+  - ReactiveCocoa
   - ReactiveSwift
   - RxCocoa
   - RxSwift
 
-EXTERNAL SOURCES:
-  ALDataRequestView:
-    :git: https://github.com/AvdLee/ALDataRequestView
-
-CHECKOUT OPTIONS:
-  ALDataRequestView:
-    :commit: 5dac8e5a3c597a479fbda958d31f8a30cf0a88df
-    :git: https://github.com/AvdLee/ALDataRequestView
-
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  ALDataRequestView: 467c8ff3bd5cfec9d8fb39c839d9e65677323309
-  ALReactiveCocoaExtension: ec0e3a3e8b6546f8e09f9010c04e5f61651c272d
-  JASON: cf4d762e61428a20db8eaef2acb6a569a10c1801
-  Moya: f83c7f81eaa28cb0151549dfcf1f3fda4440bb50
-  Moya-JASONMapper: d3af2b48acc432a97ff3da0552ddc8c5689559dc
-  Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  ALDataRequestView: 4b9d528e6cb20003bce43067ed5ee6c580b789f5
+  ALReactiveCocoaExtension: 333d6cd35623725b2c81c65e24acdf0fa5dc18f0
+  JASON: c1204b01c9979eef35b6948ca939aac5e7bef081
+  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  Moya-JASONMapper: 6e289a800f9850710543a905a614afa607d415a1
+  Nuke: 8ab71e77f6a54ff5fb697f93537c35f419bb01f7
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  ReactiveSwift: d67b677f9574ba614d94022a88fcf456e77fa515
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
-  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
-  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  ReactiveCocoa: f577006aa6c7b0b08020109ebaae3b77ada00adc
+  ReactiveSwift: 2f4e4a02e5a5c87ea63f5fe667163ce2a67cbb57
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
+  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
 
-PODFILE CHECKSUM: 47b1ef20f2f7d039ed285deedf9e33ea0faa24d4
+PODFILE CHECKSUM: 940b9ee005a5e06a471fe55bbf9937b81d61ae18
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

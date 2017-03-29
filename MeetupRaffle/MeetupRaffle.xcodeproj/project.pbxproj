@@ -12,7 +12,6 @@
 		733D6EEB1DD27A7A005FB6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EE01DD27A7A005FB6AF /* AppDelegate.swift */; };
 		733D6EED1DD27A7A005FB6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EE41DD27A7A005FB6AF /* LaunchScreen.storyboard */; };
 		733D6EEE1DD27A7A005FB6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EE61DD27A7A005FB6AF /* Main.storyboard */; };
-		733D6EEF1DD27A7A005FB6AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EE91DD27A7A005FB6AF /* Info.plist */; };
 		733D6EF21DD27AE1005FB6AF /* RaffleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF01DD27AE1005FB6AF /* RaffleViewController.swift */; };
 		733D6EF31DD27AE1005FB6AF /* ReloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF11DD27AE1005FB6AF /* ReloadViewController.swift */; };
 		733D6EF91DD27AE8005FB6AF /* MeetupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF51DD27AE8005FB6AF /* MeetupAPI.swift */; };
@@ -207,7 +206,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = alee;
 				TargetAttributes = {
 					733D6EC71DD279F5005FB6AF = {
@@ -239,7 +238,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				733D6EEF1DD27A7A005FB6AF /* Info.plist in Resources */,
 				733D6EEE1DD27A7A005FB6AF /* Main.storyboard in Resources */,
 				733D6EEA1DD27A7A005FB6AF /* Assets.xcassets in Resources */,
 				733D6EED1DD27A7A005FB6AF /* LaunchScreen.storyboard in Resources */,
@@ -354,6 +352,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -403,6 +402,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -434,6 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "MeetupRaffle/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alee.MeetupRaffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "MeetupRaffle/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alee.MeetupRaffle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
